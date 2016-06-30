@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.parse.Parse;
+
 public class SplashActivity extends AppCompatActivity {
 
     @Override
@@ -23,6 +25,12 @@ public class SplashActivity extends AppCompatActivity {
 //
 //        Handler handler = new Handler();
 //        handler.postDelayed(executeAfter3Seconds, 2500);
+
+        Parse.initialize(new Parse.Configuration.Builder(this)
+                .applicationId("kajaiZCg8Ri08zRMFDx4pAOs5ZsNbeI3boVV730M")
+                .clientKey("n7BTnvUoffFmmW6ZQnrm4g95B0SNd9VIGyo8nvFp")
+                .server("https://parseapi.back4app.com").build()
+        );
 
         new Handler().postDelayed(new Runnable() {
             @Override
