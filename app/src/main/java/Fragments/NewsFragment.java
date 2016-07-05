@@ -1,14 +1,19 @@
-package com.ahorcado.ernes.ebolapp;
+package Fragments;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.ahorcado.ernes.ebolapp.Concert;
+import com.ahorcado.ernes.ebolapp.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -16,6 +21,8 @@ import com.parse.ParseQuery;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import Adapters.ListViewAdapter;
 
 
 /**
@@ -26,7 +33,7 @@ public class NewsFragment extends Fragment {
     private ListView itemsListView;
 
     private List<Concert> listConcerts;
-    private Adapter adapter;
+    private ListViewAdapter adapter;
 
     public NewsFragment() {
         // Required empty public constructor
@@ -56,7 +63,7 @@ public class NewsFragment extends Fragment {
                         listConcerts.add(concert);
                     }
 
-                    adapter = new Adapter(listConcerts, getActivity(), getContext());
+                    adapter = new ListViewAdapter(listConcerts, getActivity());
                     itemsListView.setAdapter(adapter);
 
                 } else {
@@ -65,7 +72,21 @@ public class NewsFragment extends Fragment {
             }
         });
 
+        itemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Concert concert = listConcerts.get(position);
+                String link = concert.getLink();
+                openBrowser(link);
+            }
+        });
+
         return fragmentView;
+    }
+
+    public void openBrowser(String link) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
+        startActivity(intent);
     }
 
 }

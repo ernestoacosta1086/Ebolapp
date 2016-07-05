@@ -1,4 +1,4 @@
-package com.ahorcado.ernes.ebolapp;
+package Adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ahorcado.ernes.ebolapp.Concert;
+import com.ahorcado.ernes.ebolapp.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -15,24 +17,14 @@ import java.util.List;
 /**
  * Created by ernes on 6/29/2016.
  */
-public class Adapter extends BaseAdapter {
+public class ListViewAdapter extends BaseAdapter {
     private List<Concert> list;
     private Activity activity;
-    Context context;
 
 
-    public Adapter(List<Concert> list, Activity activity, Context context) {
+    public ListViewAdapter(List<Concert> list, Activity activity) {
         this.list = list;
         this.activity = activity;
-        this.context = context;
-    }
-
-    public Context getContext() {
-        return context;
-    }
-
-    public void setContext(Context context) {
-        this.context = context;
     }
 
     @Override

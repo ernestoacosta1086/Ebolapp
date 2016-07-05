@@ -1,4 +1,4 @@
-package com.ahorcado.ernes.ebolapp;
+package Models;
 
 /**
  * Created by ernes on 6/29/2016.
