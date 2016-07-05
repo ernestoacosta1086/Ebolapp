@@ -12,6 +12,10 @@ import com.ahorcado.ernes.ebolapp.R;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 /**
  * Created by ernes on 7/4/2016.
@@ -39,6 +43,14 @@ public class MapFragment extends SupportMapFragment {
                 }
                 map = googleMap;
                 map.setMyLocationEnabled(true);
+                map.getUiSettings().setZoomControlsEnabled(true);
+
+                MarkerOptions marker = new MarkerOptions();
+                marker.position(new LatLng(40.4752411, -3.7001598));
+                marker.icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
+                marker.title("title");
+
+                map.addMarker(marker);
             }
         });
 
