@@ -1,14 +1,13 @@
 package Adapters;
 
 import android.app.Activity;
-import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.ahorcado.ernes.ebolapp.Concert;
+import Models.Concert;
 import com.ahorcado.ernes.ebolapp.R;
 import com.squareup.picasso.Picasso;
 
@@ -50,10 +49,7 @@ public class ListViewAdapter extends BaseAdapter {
         TextView titleTextView = (TextView) rowView.findViewById(R.id.title_textView);
         titleTextView.setText(list.get(position).getTitle());
 
-        TextView imageTextView = (TextView) rowView.findViewById(R.id.image_textView);
-        imageTextView.setText(list.get(position).getLink());
-
-        ImageView imageLinkTextView = (ImageView) rowView.findViewById(R.id.image_link_textView);
+        ImageView imageLinkTextView = (ImageView) rowView.findViewById(R.id.poster_image_view);
         Picasso.with(activity)
                 .load(list.get(position).getImageLink())
                 .into(imageLinkTextView);

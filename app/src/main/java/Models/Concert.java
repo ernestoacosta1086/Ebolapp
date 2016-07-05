@@ -9,10 +9,10 @@ public class Concert {
     private String imageLink;
     private String link;
 
-    public Concert(String title, String imageLink, String link) {
+    public Concert(String title, String link, String imageLink) {
         this.title = title;
-        this.imageLink = imageLink;
         this.link = link;
+        this.imageLink = imageLink;
     }
 
     public String getTitle() {

@@ -2,7 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/poster_image_view"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="@dimen/margin"
+        android:gravity="center_vertical" />
 
     <TextView
         android:id="@+id/title_textView"
@@ -14,21 +21,4 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/image_textView"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:gravity="center_vertical"
-        android:paddingLeft="@dimen/margin"
-        android:text="Medium Text"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/image_link_textView"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center_vertical"
-        android:paddingRight="@dimen/margin"
-        />
 </LinearLayout>

@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.ahorcado.ernes.ebolapp.Concert;
+import Models.Concert;
 import com.ahorcado.ernes.ebolapp.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;

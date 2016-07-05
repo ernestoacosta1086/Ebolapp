@@ -5,10 +5,18 @@
     android:layout_height="match_parent"
     tools:context="com.ahorcado.ernes.ebolapp.MainActivity">
 
-    <fragment
-        android:id="@+id/fragment"
+    <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/main_view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:name="com.ahorcado.ernes.ebolapp.NewsFragment" />
+        android:layout_height="match_parent">
+
+        <android.support.v4.view.PagerTabStrip
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="@dimen/margin">
+
+        </android.support.v4.view.PagerTabStrip>
+
+    </android.support.v4.view.ViewPager>
 
 </RelativeLayout>
